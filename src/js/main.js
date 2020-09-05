@@ -22,7 +22,7 @@ const fetchProfileData = () => {
         const data_a = data.results;
         app.innerHTML = data_a.map( res =>{ 
                return `
-               <article class="cards">
+               <div class="cards">
                          <div class="contenido">
                          <img src="${res.picture.large}" alt="texto entrada">
                               <div class="cont-cards">
@@ -30,12 +30,11 @@ const fetchProfileData = () => {
                                    <p class="information">Nombre: ${res.name.title + " " + res.name.first + " " + res.name.last}</p>
                                    <p class="">Telefono:${res.cell}</p>
                                    <p class="">Email:${res.email}</p>
-                                  
                                    </div>
                               </div>
                          </div>
-               </article>`
-           })
+               </div>`
+            }).join('');
        })
     })
 }
